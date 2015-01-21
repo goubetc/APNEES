@@ -1,0 +1,60 @@
+import java.util.*;
+
+class Fiche {
+	string nom;
+	string prenom;
+	int age;
+	
+	void lire(Fiche f){
+		
+		
+		while(erreur) {
+		    erreur = false;
+		    try {
+		    	my_scanner = new Scanner(System.in);
+				System.out.println("Saisissez votre nom");
+				f.nom = my_scanner.nextLine();
+				// System.out.println("Vous avez l'entier : " + entier);
+			}
+			catch(NoSuchElementException e) {
+				System.out.println("Aucune ligne trouvee");
+				erreur = true;
+			}
+		}
+		
+		while(erreur) {
+		    erreur = false;
+		    try {
+		    	my_scanner = new Scanner(System.in);
+				System.out.println("Saisissez votre prenom");
+				f.prenom = my_scanner.nextLine();
+				// System.out.println("Vous avez l'entier : " + entier);
+			}
+			catch(NoSuchElementException e) {
+				System.out.println("Aucune ligne trouvee");
+				erreur = true;
+			}
+		}
+		
+		
+		while(erreur) {
+		    erreur = false;
+		    try {
+		    	my_scanner = new Scanner(System.in);
+				System.out.println("Saisissez votre age");
+				f.age = my_scanner.nextInt();
+				// System.out.println("Vous avez l'entier : " + entier);
+			}
+			catch(InputMismatchException e) {
+				System.out.println("Pas un int bolosse");
+				erreur = true;
+			}
+		}
+	}
+	
+	void afficher(fiche f) {
+		System.out.println("nom : " + f.nom);
+		System.out.println("prenom : " + f.prenom);
+		System.out.println("age : " + f.age);
+	}
+}

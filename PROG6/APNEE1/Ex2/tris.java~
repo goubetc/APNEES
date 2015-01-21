@@ -1,0 +1,67 @@
+import java.util.*;
+import java.io.PrintStream;
+
+
+class Tris {
+	public static void main(String [] args) {
+		 System.out.println("taille tu tableau ?");
+		 Scanner scan = new Scanner(System.in); 
+		 int i;
+		 int [] tab;
+		 int N = scan.nextInt();
+		 
+		 tab = new int[N];
+		 Random r = new Random();
+		 for(i=0;i<tab.length;i++) {
+		 	tab[i] = r.nextInt(1000);		 	
+		 }
+		 insertSort(tab);
+		 
+		 for(i=0;i<tab.length;i++) {
+		 	System.out.println(i + " " + tab[i]);
+		 }
+		 
+	}
+
+	static void insertSort(int[] A){
+	  for(int i = 1; i < A.length; i++){
+		int value = A[i];
+		int j = i - 1;
+		while(j >= 0 && A[j] > value){
+		  A[j + 1] = A[j];
+		  j = j - 1;
+		}
+		A[j + 1] = value;
+	  }
+	}
+
+/*	
+	static void echanger(int [] tab, int a, int b){
+		int temp = tab[a];
+		tab[a] = tab[b];
+		tab[b] = temp;
+	}
+	
+	static int partitionner(int [] tab, int premier,int dernier, int pivot){
+		echanger(tab,pivot,dernier);
+		int j = premier;
+		for(int i =0; i< dernier; i++) {
+			if(tab[i] <= tab[dernier]) {
+				echanger(tab, i,j);
+				j++;
+			}
+		}
+		echanger(tab,dernier,j);
+		return j;
+	}
+	
+	static void tri_rapide( int [] tab, int premier, int dernier){
+		if(premier < dernier){
+			int pivot = 1;
+			pivot = partitionner(tab, premier, dernier, pivot);
+			tri_rapide(tab, premier, pivot-1);
+			tri_rapide(tab, pivot+1, dernier);
+		}
+	}
+	
+}*/
